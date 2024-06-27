@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "e2a87f47-8396-4892-806e-072839a8ba73",
+		"name": "Analytics",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "11195793",
+		"_collection_link": "https://red-crater-495428.postman.co/workspace/superapp-dev~f6b5a746-7e77-4637-bf9a-7a7de6617238/collection/11195793-e2a87f47-8396-4892-806e-072839a8ba73?action=share&source=collection_link&creator=11195793"
+	},
+	"item": [
+		{
+			"name": "Analytics-ms",
+			"item": [
+				{
+					"name": "cheque Copy 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// var jsonData = pm.response.json();\r",
+									"// //console.log('fetch',jsonData.payload);\r",
+									"// const key = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+									"// const iv = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+									"// const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+									"// const responsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+									"// console.log(responsePlainText );"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{devXapiKey}}",
+								"type": "text"
+							},
+							{
+								"key": "SuperAppAuthToken",
+								"value": "{{devSuperAppAuthToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{devCognitoToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ssoId\": \"100422\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{devBaseUrl}}/cheque"
+					},
+					"response": []
+				},
+				{
+					"name": "acitivity Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// var jsonData = pm.response.json();\r",
+									"// //console.log('fetch',jsonData.payload);\r",
+									"// const key = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+									"// const iv = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+									"// const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+									"// const responsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+									"// console.log(responsePlainText );"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{devXapiKey}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{devCognitoToken}}",
+								"type": "text"
+							},
+							{
+								"key": "SuperAppAuthToken",
+								"value": "{{devSuperAppAuthToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ssoId\": \"ssoId_bcdd2c9e8097\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{devBaseUrl}}/kpi/activity"
+					},
+					"response": []
+				},
+				{
+					"name": "sales Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// var jsonData = pm.response.json();\r",
+									"// //console.log('fetch',jsonData.payload);\r",
+									"// const key = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+									"// const iv = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+									"// const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+									"// const responsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+									"// console.log(responsePlainText );"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{devXapiKey}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{devCognitoToken}}",
+								"type": "text"
+							},
+							{
+								"key": "SuperAppAuthToken",
+								"value": "{{devSuperAppAuthToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ssoId\": \"ssoId_bcdd2c9e8097\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{devBaseUrl}}/kpi/sales"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

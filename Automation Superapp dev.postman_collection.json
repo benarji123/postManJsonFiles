@@ -1,0 +1,1536 @@
+{
+	"info": {
+		"_postman_id": "cb44be19-02ec-41a3-96f8-9c7162a30419",
+		"name": "Automation Superapp dev",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "11195793"
+	},
+	"item": [
+		{
+			"name": "Analytics-ms",
+			"item": [
+				{
+					"name": "cheque Copy 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"//console.log('fetch',jsonData.payload);\r",
+									"const key = CryptoJS.enc.Latin1.parse('LT264K56MUPSKOE98MEK54EFJI672KSW');\r",
+									"const iv = CryptoJS.enc.Latin1.parse('TLM499M2719L4TI4');\r",
+									"const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+									"const responsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+									"console.log(responsePlainText );"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{devXapiKey}}",
+								"type": "text"
+							},
+							{
+								"key": "SuperAppAuthToken",
+								"value": "{{devSuperAppAuthToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{devCognitoToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payload\":\"Rq0EuvOyr6gl2GER2BVCCKoNxBwKFdIh/8T2Q1jCLN0=\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{devBaseUrl}}/cheque"
+					},
+					"response": []
+				},
+				{
+					"name": "acitivity Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"//console.log('fetch',jsonData.payload);\r",
+									"const key = CryptoJS.enc.Latin1.parse('LT264K56MUPSKOE98MEK54EFJI672KSW');\r",
+									"const iv = CryptoJS.enc.Latin1.parse('TLM499M2719L4TI4');\r",
+									"const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+									"const responsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+									"console.log(responsePlainText );"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{devXapiKey}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{devCognitoToken}}",
+								"type": "text"
+							},
+							{
+								"key": "SuperAppAuthToken",
+								"value": "{{devSuperAppAuthToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payload\":\"j89OPXxD2ts2TwA8GxyQpORtn2BlxpDy2zUlaE6xDTiIQnnlNXnjhJ+1tO92EMke\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{devBaseUrl}}/kpi/activity"
+					},
+					"response": []
+				},
+				{
+					"name": "sales Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"//console.log('fetch',jsonData.payload);\r",
+									"const key = CryptoJS.enc.Latin1.parse('LT264K56MUPSKOE98MEK54EFJI672KSW');\r",
+									"const iv = CryptoJS.enc.Latin1.parse('TLM499M2719L4TI4');\r",
+									"const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+									"const responsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+									"console.log(responsePlainText );"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{devXapiKey}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{devCognitoToken}}",
+								"type": "text"
+							},
+							{
+								"key": "SuperAppAuthToken",
+								"value": "{{devSuperAppAuthToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payload\":\"j89OPXxD2ts2TwA8GxyQpORtn2BlxpDy2zUlaE6xDTiIQnnlNXnjhJ+1tO92EMke\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{devBaseUrl}}/kpi/sales"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Calendar MS",
+			"item": [
+				{
+					"name": "Get All Events",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"//console.log('fetch',jsonData.payload);\r",
+									"const key = CryptoJS.enc.Latin1.parse('LT264K56MUPSKOE98MEK54EFJI672KSW');\r",
+									"const iv = CryptoJS.enc.Latin1.parse('TLM499M2719L4TI4');\r",
+									"const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+									"const responsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+									"console.log(responsePlainText );"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "SuperAppAuthToken",
+								"value": "{{devSuperAppAuthToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{devCognitoToken}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{devXapiKey}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payload\": \"/Avns7bf20nlYo+x2KAppbVxYx3k10g9jdLiOuBXzos=\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{devBaseUrl}}/calendar/events"
+					},
+					"response": []
+				},
+				{
+					"name": "Mark Attendance",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"//console.log('fetch',jsonData.payload);\r",
+									"const key = CryptoJS.enc.Latin1.parse('LT264K56MUPSKOE98MEK54EFJI672KSW');\r",
+									"const iv = CryptoJS.enc.Latin1.parse('TLM499M2719L4TI4');\r",
+									"const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+									"const responsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+									"console.log(responsePlainText );"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "SuperAppAuthToken",
+								"value": "{{devSuperAppAuthToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{devCognitoToken}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{devXapiKey}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payload\": \"4l4PaiXwbO+G/BiTdnaXNoJ5Kn6vorYe4C/HBB7bYUESrjgFcVGEosh1hPn0eQkoeqbgsFtcEwW+4KtKrt3ROC+rsDHvTo/W4jXQH7jZXI8Ve2fV52Bss6UWfZ0Aj5IOjGeP1u+O58yeptXhMz6rX3te1RZhAcKbnWNMxyMdLiVUZicyyvuW0awViegxzquIfUOtopN1lRw/lArLFf+kbzbxhjPIQZIXyIGaWlNg+nSVvqwxgHQKR/i62Z4KE7fpjVbOcBcN1sAjXUKJFfZ/t35i8BmdlGaSHrLAq6auhwfNgpaKh1mLtdHPxJJx285QgWs9iJo0ZbEntgMYzfIoZgBq/VodeFwuw/vfun0OSxjNlI5DJaSUFrsB+dGxHzCDoTcED98lxSLFwxD3n++L6Zmpd/s2atm6DC2Oab+gEWXDwV0pwIPLveBS802oJDtQTUSMLyE05ID3ZH70kK74m5Q9w1AppVUSV7/I40/MPL4/7JlVtkEfDEfK4GaIHyIxcQVYc23r8bPtYd0dqzhntxB1jXWxenp4ZcUCpe5QNR9cB00HEQObECQeW6U3nS+FK6j213mdL7KxGHoBHR/h0dmLPvWD+8fS3V0WPJ5du83aWY2CJfL57s4MheeNskN1qBBkjB3BG7RJOwvWlosTlfj9bcQyxDg52QqDNd62JrTm6Wp97NugcXTVGykzAXKE5i2Vn1FZcoPD/OEgNSclYq27IaDZAnLSCfPtEtkqg+bI7ja53mV/vptqmEVxo+pmX/V24KgqakFM1DWCcq0fBmW88bFHBrtht7BhY56TiN7pRIF1QQURzfCmjBE/RgU25BKqNB1nd/IYIurFvD0KTg2+FX0seOJ2ZKUYJbz6n7/AKDEWCN3MhzKSlwvjyC4BLujWMzXtNuofXfY38h3LTMFBGJg+R7mDdmKX4e/suR588e6stsV3FGNVAty5GqDo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{devBaseUrl}}/attendance/mark"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Attendance",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"//console.log('fetch',jsonData.payload);\r",
+									"const key = CryptoJS.enc.Latin1.parse('LT264K56MUPSKOE98MEK54EFJI672KSW');\r",
+									"const iv = CryptoJS.enc.Latin1.parse('TLM499M2719L4TI4');\r",
+									"const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+									"const responsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+									"console.log(responsePlainText );"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "SuperAppAuthToken",
+								"value": "{{devSuperAppAuthToken}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{devXapiKey}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{devCognitoToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payload\": \"BuUAsc1XCpZfZW2BuDFGgdrrGlvYlz82iK/HDKf2Xs/HVocP/2299Ep0lobaEZK3tqjWpegNzehgCL620u/H5AcWLnN5TH0S5RdRSwXxB7KTh8i+uaqrdgNQ7pRf+A1iGdfLsNQK4ufkxzRkOnH4zp46hgn0+5R4dHtsroVS3Qjq0COnHFEz104KgTUuVdUGZ98sFwsIhSrmwdNpKPV1FEIavT9XBpIZWQahqXsGlZP3n1I+rva9kKWpoRB4QcMhF7x260G+DMqtMpch5tS+ZViHnGeGCh5tC7iqphRQEszCxX0nfdRlfDwN7vWpi6QtluK+YnNMkleZ/pQjPflJTCTZM7PfuItFpTCP+TFPJdoOYd1Ak5v8gT48F2bTnEy59hd0nhQnp0iPxl1EZHYMKA==\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{devBaseUrl}}/attendance/status"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notification MS (Mock data)",
+			"item": [
+				{
+					"name": "Get Notifications By Tag",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"//console.log('fetch',jsonData.payload);\r",
+									"const key = CryptoJS.enc.Latin1.parse('LT264K56MUPSKOE98MEK54EFJI672KSW');\r",
+									"const iv = CryptoJS.enc.Latin1.parse('TLM499M2719L4TI4');\r",
+									"const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+									"const responsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+									"console.log(responsePlainText );"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "SuperAppAuthToken",
+								"value": "{{devSuperAppAuthToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{devCognitoToken}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{devXapiKey}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payload\":\"JM4JGlJnHgAU19pun/6z9Xr07ubGllHyVvfBZW3Mf3Q=\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{devBaseUrl}}/notification/list"
+					},
+					"response": []
+				},
+				{
+					"name": "Mark As Read",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"//console.log('fetch',jsonData.payload);\r",
+									"const key = CryptoJS.enc.Latin1.parse('LT264K56MUPSKOE98MEK54EFJI672KSW');\r",
+									"const iv = CryptoJS.enc.Latin1.parse('TLM499M2719L4TI4');\r",
+									"const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+									"const responsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+									"console.log(responsePlainText );"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "SuperAppAuthToken",
+								"value": "{{devSuperAppAuthToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{devCognitoToken}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{devXapiKey}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payload\":\"jWYm5xjMIT5+SxO/4y/GKQQVLVs1AAJ0F5YCogrrXSTsNhXnj4exX1c5Z04XVwWJ1rf3xGaqmHRaTI+Yz82kq0j9YLfDZArGY2mdsZ68SoTy6e/t6XXtSftxJG8svTKg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{devBaseUrl}}/notification/mark-read"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Content MS (Mock data)",
+			"item": [
+				{
+					"name": "Get Smart-Nudges",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// var jsonData = pm.response.json();\r",
+									"// //console.log('fetch',jsonData.payload);\r",
+									"// const key = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+									"// const iv = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+									"// const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+									"// const responsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+									"// console.log(responsePlainText );"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{devCognitoToken}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "zGVsUXS2gERSXttUpHRD2d3cejLI6YE7cf7ZKXdd",
+								"type": "text"
+							}
+						],
+						"url": "{{devBaseUrl}}/smart-nudges"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Sizelers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// var jsonData = pm.response.json();\r",
+									"// //console.log('fetch',jsonData.payload);\r",
+									"// const key = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+									"// const iv = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+									"// const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+									"// const responsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+									"// console.log(responsePlainText );"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "SuperAppAuthToken",
+								"value": "{{devSuperAppAuthToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{devCognitoToken}}",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{devXapiKey}}",
+								"type": "text"
+							}
+						],
+						"url": "{{devBaseUrl}}/sizzlers"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lead MS",
+			"item": [
+				{
+					"name": "addLead",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"//console.log('fetch',jsonData.payload);\r",
+									"const key = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+									"const iv = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+									"const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+									"const responsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+									"console.log(responsePlainText );"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{devXapiKey}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{devCognitoToken}}",
+								"type": "text"
+							},
+							{
+								"key": "SuperAppAuthToken",
+								"value": "{{devSuperAppAuthToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payload\": \"5bNSU+hUjM3/u2SiEIz0SODPe4Xs8sysLRZFtZWGWnnyM5sLG2h1uQ9tZyZveJaziXfE9iBOOnI1dLW1SbQiymXyht+IHbjMZWTwbraimDe4XgP5xpzotY4Lph4cDiJY1CC9b47h5ySEIByAh8TZ1OJhcFAW70o48zKJlpEo0SgWK6ePuZTFAFUEwhwSonUPAu1OUVfc29h+FBY5FgMK00rOLSCCBv4ShWev1b15ZtXqeDAlfm1AP+lYTGiYp/htDRy8/49B7Nm/Ncd+no7ruzCi8Fn7I2IupgqY10ZHxir0mkp+Y0IE4Z4Qg0WHId3cmhEyD1OSRlAKlI0PZutKTpR4lWS67rDlYAaVJhXZ2CI+X9xI37tiqO66bTATEaBOowPhLJQP11IdxmvTlS9/Wfd3x5IU3wfZN2qOqB5KozgQj1rz87WGv902XaE250RrMUbSvV23CEk2hSexUgFbi+qOw+eH7pZlIrGcgd2BTa/eAvxuBXfLO/avItj+187GvPKYW+0ve0ZodQo4S4tfSYbffzlXBlg1SWpnFDB45TfwuKORrtakZCWPMrs5GHVHVnePZ+CWxVSxEWTPPJEM8RNkh0sBghTcx4Ct9oORmjtSxHgbfOJ8SYr7SLEj3TMhTZwsMhJJ0QU7uCEjCMGJ6Q08fA2ZoLDcI30wloxf4Evq60gj6R+uaT5vU0tqGLuxQvGvyveGQY7gebegaI2dIaN/1NPOaRLybbNlKIKvBJFcR1Dn9j4HIK3JER1t/qt1hqxTxjPSoLtJnN2/3B80JXriB7DK5p2YqMUOPPRaufBSx9goJuf+9T57tOSss4KJCVGvf18Cbw19+ElymVlfBeGRbauO7hPGIH+tu982vM3ZclcGep/OlTtj1toc79lu0nN7ubwsrYKpwSeUHAff4UP0xWXBt7qQmoCfUm7WujWL37R/AN8CdvUz3/4AXU+yB7GOVv+rrI4TcWPvsBx3LHMaWUgilMR4EJAxg9VKR+nBD4IrS8DM0L6Ucp8lutyemhwuT36tIIc3Ug7p9q06BzC29nfGtkEB0rPJt5OfJIqqWewk9jL5PhX7fD+1VCE3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{devBaseUrl}}/lead"
+					},
+					"response": []
+				},
+				{
+					"name": "add-crm-leads",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"//console.log('fetch',jsonData.payload);\r",
+									"const key = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+									"const iv = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+									"const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+									"const responsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+									"console.log(responsePlainText );"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJraWQiOiJHdlBORnZiR2VTWEpPTFBBY21BUzY3Y25xZ2RKRUQ2YkpJaEVQNE5BOEI0PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxbjEzMGR1Zm1uN2FrZDgyaGZzcnQyaGx0ayIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYWRtaW5cL3dyaXRlIGFkbWluXC9yZWFkIiwiYXV0aF90aW1lIjoxNzA3NzMxMzYyLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGgtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aC0xX2dZTTVPN005MiIsImV4cCI6MTcwNzczNDk2MiwiaWF0IjoxNzA3NzMxMzYyLCJ2ZXJzaW9uIjoyLCJqdGkiOiIwNjNlYmVhZS0xMjFhLTQ3MWMtOWU2MS1hMTc5NzcwNDlhZGIiLCJjbGllbnRfaWQiOiIxbjEzMGR1Zm1uN2FrZDgyaGZzcnQyaGx0ayJ9.XtMKVVAeOaMBWkl1nKreriwJdXDOspR8-Mx2RgMim-lLzcww8bBELWdbeYjptmLtf9tSKJbXUzbBRKUFfGFM96Vz1q4xK4rbHXnV8p7SbiRdfGRrsA6C5pJQzLouaBDEguJfNZfiHiLTIzffHQ7TGbMikty7QyYyMuixOhv09P-bWkyO1cX3MhQeeL8F9d6KqclIzBX8HBWHiRWuRR7YBzRNMfSlkiqrQ_7I_iYMQCNBQYCdH85MEsos5rhOp40wG-g3b3k58IUgAZlhc16OsVWWQbcYVga1fXGSfbIs0NUUbmLRIM96CN7OQwf9P7augYLRRa6qoW_Q4FAT3s87eg"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "zGVsUXS2gERSXttUpHRD2d3cejLI6YE7cf7ZKXdd",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "{{devCognitoToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"superAppCoRelationId\": \"ljdlkfjklsjfkj3234234234\",\r\n    \"leads\": [\r\n        {\r\n            \"agentId\": \"90000\",\r\n            \"customerName\": \"ramesh goli\",\r\n            \"mobileNumber\": \"9090916234\",\r\n            \"gender\": \"Male\",\r\n            \"catSource\": \"Self Lead\",\r\n            \"photo\": \"/imagepath/photo.png\",\r\n            \"dob\": \"01/12/2000\",\r\n            \"alternateMobileNo\": \"9090909090\",\r\n            \"email\": \"ramesh@monocept.com\",\r\n            \"nationality\": \"Indian\",\r\n            \"occupation\": \"Salaried\",\r\n            \"education\": \"Graduate\",\r\n            \"isPermanentAddressSame\": false,\r\n            \"houseNo\": \"HA091\",\r\n            \"pinCode\": \"752030\",\r\n            \"city\": \"Balugaon\",\r\n            \"state\": \"Odisha\",\r\n            \"commHouseNo\": \"HA091\",\r\n            \"commPinCode\": \"752031\",\r\n            \"commCity\": \"Banpur\",\r\n            \"commState\": \"Odisha\",\r\n            \"campaign\": \"Yes\",\r\n            \"investment\": \"Bonds\",\r\n            \"income\": \"<5L\",\r\n            \"leadStatus\": \"Fresh Lead\",\r\n            \"leadId\": \"345781\",\r\n            \"vymoId\": \"9999999999\",\r\n            \"probabilityClosure\": \"Hot\",\r\n            \"mainCampaign\": \"Tejas\",\r\n            \"lastActivityTime\": \"2024-01-12T08:25:00.579+00:00\",\r\n            \"customerId\": \"188888818\",\r\n            \"createTime\": \"2024-01-12T08:25:00.579+00:00\",\r\n            \"updateTime\": \"2024-01-12T08:25:00.579+00:00\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{devBaseUrl}}/add-cat-leads"
+					},
+					"response": []
+				},
+				{
+					"name": "lead-details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"//console.log('fetch',jsonData.payload);\r",
+									"const key = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+									"const iv = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+									"const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+									"const responsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+									"console.log(responsePlainText );"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{devXapiKey}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{devCognitoToken}}",
+								"type": "text"
+							},
+							{
+								"key": "SuperAppAuthToken",
+								"value": "{{devSuperAppAuthToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payload\": \"TFGN7cxpDfTsabat9wB+ZppIHrZZI7cgKMCnTMqLO1KQUgjeNqSnWNUOxHtWIgfA2zwqc1jqTeJXRwLJMDKAQp9KsqmDQaTT84FiSFYsN+HUiyl89f1McLz+Cyo7rNBU8u22hjhZUi1rcrA3112uZwQRU3FQFZAe8eWcyOlk4/AO8p56KCAJ2Vq7j+SzmIS1A5CLFrCYXKzvHpacLEuaweg3irSfxfVkvK6YeOBaGW50ER/34S2iIVsDtRhQZCAs3IlpXVUcO+SBlOIaES3Wc1M3Th1p/H1RpTSak2GuweNbOeTKikWoWYyzbCi3kbK/rTbROJqk+IzGWqCsYLohse8URDZUYzuhfVlVuiAHDTIeSE2Uh7I157EDfeq7uoVJBTavjzUePJIhHmVwSfQ30ecFi82+ozC8vKMMV5EsnQUnYBfqTNwJuQ3dXAR9XBBz72Ea6T5btYom3xcTsXz3E4fwxLLWi27LvsTY0zSSE6P06TBQA2lm4MofAlyykjqaYJiixsmX+LCQVfL5QTua8MQ2RkHoezWzU4ihgB0xF5o=\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{devBaseUrl}}/lead-details"
+					},
+					"response": []
+				},
+				{
+					"name": "lead-details-team",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"//console.log('fetch',jsonData.payload);\r",
+									"const key = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+									"const iv = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+									"const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+									"const responsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+									"console.log(responsePlainText );"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{devXapiKey}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{devCognitoToken}}",
+								"type": "text"
+							},
+							{
+								"key": "SuperAppAuthToken",
+								"value": "{{devSuperAppAuthToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payload\":\"TFGN7cxpDfTsabat9wB+ZppIHrZZI7cgKMCnTMqLO1KQUgjeNqSnWNUOxHtWIgfA2zwqc1jqTeJXRwLJMDKAQtzlohjWIw+n0TH/o9pcviPtRGILMH7jcSwyX52csQJkzqnOpljOlkmGEa9pjIwbVkMVStxrChnfPAaYTSxrORcRT2NqRgyY870dRLjxKdULMUIXjc1OYfWUpDr3n/pviJVXGc/I4/eo2Iz1A7JGcSZU6S20J06mFreejM86YB2FmYtIZGSj+uUnNU5X18f2qjA/waCpi41pRRcgKHgLHg7FYbzy1wmGdovy12zXVqSHalykv5UzkmbCFMEnu0hCEeq6YBoNMWeF1t4RMbk0T/PGX9VDcK8OO4LVahy1lwRZKwB5MQKnKu+I7j/6QjGTDqMW8oTYuy7exX9HUokABFvAb6gVsViy/xfkX7fAm09UCtuaJLJkm7SudjXuT3MWCt7cP359grAhjN0VAf7GMJYuPZ/x/JWX3bnJMxkQDtfZe5hdv/ojoMS12qiIgOfZqp98J58fKtt865kbEW7siPWUeWf5XqxWmJ7PdsKwnXBA0tyQpHPh81Z9Td69yU85vAOW5M0HVnU05f951Qjpaytrdp7UD8KyXDSJoDUf2isb\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{devBaseUrl}}/lead-details"
+					},
+					"response": []
+				},
+				{
+					"name": "leadSync",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"//console.log('fetch',jsonData.payload);\r",
+									"const key = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+									"const iv = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+									"const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+									"const responsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+									"console.log(responsePlainText );"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{devXapiKey}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{devCognitoToken}}",
+								"type": "text"
+							},
+							{
+								"key": "SuperAppAuthToken",
+								"value": "{{devSuperAppAuthToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payload\": \"5bNSU+hUjM3/u2SiEIz0SPeXzsTCoHdpQYCO3AXempk=\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{devBaseUrl}}/lead-sync"
+					},
+					"response": []
+				},
+				{
+					"name": "leadAtGlance",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"//console.log('fetch',jsonData.payload);\r",
+									"const key = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+									"const iv = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+									"const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+									"const responsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+									"console.log(responsePlainText );"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{devXapiKey}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{devCognitoToken}}",
+								"type": "text"
+							},
+							{
+								"key": "SuperAppAuthToken",
+								"value": "{{devSuperAppAuthToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payload\": \"ulCGkH8TJ2PdCFlZ8ur2bRCHHdcG+NDpvCrB0sEV58JEvg0B6xLgPToOpY6ZOIs7AzZ/XmBkuTh/VHLRRnhRzw==\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{devBaseUrl}}/leads-at-glance"
+					},
+					"response": []
+				},
+				{
+					"name": "update-crm-leads",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"//console.log('fetch',jsonData.payload);\r",
+									"const key = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+									"const iv = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+									"const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+									"const responsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+									"console.log(responsePlainText );"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "zGVsUXS2gERSXttUpHRD2d3cejLI6YE7cf7ZKXdd",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{devCognitoToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"superAppCoRelationId\": \"ljdlkfjklsjfkj3234234234\",\r\n    \"leads\": [\r\n        {\r\n            \"agentId\": \"90000\",\r\n            \"customerName\": \"ramesh goli\",\r\n            \"mobileNumber\": \"9090916234\",\r\n            \"gender\": \"Male\",\r\n            \"catSource\": \"Self Lead\",\r\n            \"photo\": \"/imagepath/photo.png\",\r\n            \"dob\": \"01/12/2000\",\r\n            \"alternateMobileNo\": \"9090909090\",\r\n            \"email\": \"ramesh@monocept.com\",\r\n            \"nationality\": \"Indian\",\r\n            \"occupation\": \"Salaried\",\r\n            \"education\": \"Graduate\",\r\n            \"isPermanentAddressSame\": false,\r\n            \"houseNo\": \"HA091\",\r\n            \"pinCode\": \"752030\",\r\n            \"city\": \"Balugaon\",\r\n            \"state\": \"Odisha\",\r\n            \"commHouseNo\": \"HA091\",\r\n            \"commPinCode\": \"752031\",\r\n            \"commCity\": \"Banpur\",\r\n            \"commState\": \"Odisha\",\r\n            \"campaign\": \"Yes\",\r\n            \"investment\": \"Bonds\",\r\n            \"income\": \"<5L\",\r\n            \"leadStatus\": \"Fresh Lead\",\r\n            \"leadId\": \"345781\",\r\n            \"vymoId\": \"9999999999\",\r\n            \"probabilityClosure\": \"Hot\",\r\n            \"mainCampaign\": \"Tejas\",\r\n            \"lastActivityTime\": \"2024-01-12T08:25:00.579+00:00\",\r\n            \"customerId\": \"188888818\",\r\n            \"createTime\": \"2024-01-12T08:25:00.579+00:00\",\r\n            \"updateTime\": \"2024-01-12T08:25:00.579+00:00\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{devBaseUrl}}/update-cat-leads"
+					},
+					"response": []
+				},
+				{
+					"name": "generateQuote",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"//console.log('fetch',jsonData.payload);\r",
+									"const key = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+									"const iv = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+									"const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+									"const responsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+									"console.log(responsePlainText );"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{devXapiKey}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{devCognitoToken}}",
+								"type": "text"
+							},
+							{
+								"key": "SuperAppAuthToken",
+								"value": "{{devSuperAppAuthToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payload\":\"TFGN7cxpDfTsabat9wB+ZppIHrZZI7cgKMCnTMqLO1K1/qTuuU9oftnrBAPgRMc8oqVa3ef/e3riDwSRXFJEaNOzPavrPVg9jIqNwNXXOhk=\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{devBaseUrl}}/generate-quote"
+					},
+					"response": []
+				},
+				{
+					"name": "quoteList",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"//console.log('fetch',jsonData.payload);\r",
+									"const key = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+									"const iv = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+									"const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+									"const responsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+									"console.log(responsePlainText );"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{devXapiKey}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{devCognitoToken}}",
+								"type": "text"
+							},
+							{
+								"key": "SuperAppAuthToken",
+								"value": "{{devSuperAppAuthToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payload\": \"TFGN7cxpDfTsabat9wB+ZppIHrZZI7cgKMCnTMqLO1K1/qTuuU9oftnrBAPgRMc8oqVa3ef/e3riDwSRXFJEaNOzPavrPVg9jIqNwNXXOhk=\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{devBaseUrl}}/quotes-list"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User MS",
+			"item": [
+				{
+					"name": "Login API",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"//console.log('fetch',jsonData.payload);\r",
+									"const key = CryptoJS.enc.Latin1.parse('LT264K56MUPSKOE98MEK54EFJI672KSW');\r",
+									"const iv = CryptoJS.enc.Latin1.parse('TLM499M2719L4TI4');\r",
+									"const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+									"const loginResponsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+									"console.log(loginResponsePlainText.data.jwtToken );\r",
+									"pm.environment.set(\"devSuperAppAuthToken\", 'Bearer '+loginResponsePlainText.data.jwtToken);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "zGVsUXS2gERSXttUpHRD2d3cejLI6YE7cf7ZKXdd"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{devCognitoToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"payload\": \"PhJ2Ul6geDCAxMii21VHojzFIbazxjHR+fgoz366th0z1ENpvVz21fDM5E7eXZ+YNF70s5g1kAPGFVNANJFNZ/PGvt9OmowM9QcnxC5Jmbl1x09n8ZwKqa+mZARELLxoAosZ/AFPrDkoViaMXXubZrMW1tnEpttQ5dTje0sTXaoT5cy02Xl4D9blV2mSCRysAik8xSC6iHWoAkRFq4FUxQ==\"\n}"
+						},
+						"url": "{{devBaseUrl}}/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "User-Status API",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"//console.log('fetch',jsonData.payload);\r",
+									"const key = CryptoJS.enc.Latin1.parse('LT264K56MUPSKOE98MEK54EFJI672KSW');\r",
+									"const iv = CryptoJS.enc.Latin1.parse('TLM499M2719L4TI4');\r",
+									"const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+									"const loginResponsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+									"console.log(loginResponsePlainText);\r",
+									"// pm.environment.set(\"devSuperAppAuthToken\", 'Bearer '+loginResponsePlainText.data.jwtToken);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "zGVsUXS2gERSXttUpHRD2d3cejLI6YE7cf7ZKXdd"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{devCognitoToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"payload\":\"0BgP490InGApO3qHqo55E/ETBVXJXmNzdU0EO22dZeI=\" //// producer - VJJPR0893 - inactive user\n}"
+						},
+						"url": "{{devBaseUrl}}/user-status"
+					},
+					"response": []
+				},
+				{
+					"name": "team list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"//console.log('fetch',jsonData.payload);\r",
+									"const key = CryptoJS.enc.Latin1.parse('LT264K56MUPSKOE98MEK54EFJI672KSW');\r",
+									"const iv = CryptoJS.enc.Latin1.parse('TLM499M2719L4TI4');\r",
+									"const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+									"const responsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+									"console.log(responsePlainText );"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "SuperAppAuthToken",
+								"value": "{{devSuperAppAuthToken}}"
+							},
+							{
+								"key": "x-api-key",
+								"value": "{{devXapiKey}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{devCognitoToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"payload\": \"mBPrP2usizcUxAFq9D3ZvDoLw4zk1dWlugFKSe2u14g=\"\n}"
+						},
+						"url": "{{devBaseUrl}}/team/team-list"
+					},
+					"response": []
+				},
+				{
+					"name": "cognito wrapper",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"//console.log('fetch',jsonData.payload);\r",
+									"const key = CryptoJS.enc.Latin1.parse('LT264K56MUPSKOE98MEK54EFJI672KSW');\r",
+									"const iv = CryptoJS.enc.Latin1.parse('TLM499M2719L4TI4');\r",
+									"const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+									"const cognitoResponsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+									"console.log('fetch',cognitoResponsePlainText.data.access_token);\r",
+									"pm.environment.set(\"devCognitoToken\", 'Bearer '+cognitoResponsePlainText.data.access_token);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "zGVsUXS2gERSXttUpHRD2d3cejLI6YE7cf7ZKXdd"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic MW4xMzBkdWZtbjdha2Q4Mmhmc3J0MmhsdGs6aGwwczZ0Zm5tNnY0bTB2aHFrbGtpNG1qOG1vOXNza2ZkbnM1NHVnMWRnbHVpN282cmNn"
+							}
+						],
+						"url": "{{devBaseUrl}}/cognito-token"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Deeplink MS",
+			"item": [
+				{
+					"name": "backend-dev-mQuote",
+					"item": [
+						{
+							"name": "generate-quote Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json();\r",
+											"//console.log('fetch',jsonData.payload);\r",
+											"const key = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+											"const iv = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+											"const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+											"const responsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+											"console.log(responsePlainText );"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{devCognitoToken}}",
+										"type": "text"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{devXapiKey}}",
+										"type": "text"
+									},
+									{
+										"key": "SuperAppAuthToken",
+										"value": "{{devSuperAppAuthToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"payload\":\"nuDrzyufMofhEHfcR5EUXHjjTcJlgb5OriwpNbJYibCdylfEMuYD22BGtY1lSQukzcSVqT9okKn0q2JLQ9I8iTTLTqnjMzDZsCKbjeGQlcYV1N2er42iYcS7gk8rV+XGCWX4IwGPVazyEiu/U1Mfmywwmnfkzu7lrkLXvEjNGlkK2E0pTmT/wGrbXowbIjV6bIh8n6Eu1LuvoO8ew0OHrbwYnoAhzZg1VB9E14rmLsYs9SXxzkshHUpFkF2JMtSF\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{devBaseUrl}}/quotes"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "backend-dev-oneview",
+					"item": [
+						{
+							"name": "One View SuperApp V1 Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json();\r",
+											"//console.log('fetch',jsonData.payload);\r",
+											"const key = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+											"const iv = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+											"const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+											"const responsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+											"console.log(responsePlainText );"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{devCognitoToken}}",
+										"type": "text"
+									},
+									{
+										"key": "x-api-key",
+										"value": "{{devXapiKey}}",
+										"type": "text"
+									},
+									{
+										"key": "SuperAppAuthToken",
+										"value": "{{devSuperAppAuthToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"payload\": \"/FYEsTFGyO2SDKjG4VEay4o1sPhwW7tXdyp39bhFqSKrQri71rOcIP0DreI7zbQrIawcK/Y+M+SNwYpJHH6DfuMR1/yyNI6zXzNApuUj02VKn3Z55bNtrjR6/EyqH14aqFQG9Dfani+KbqCZT91UKbfWbh0qsxGXCmy9KFPTeeAyArQ1riYaSDqGd4yMNgqM\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{devBaseUrl}}/sales-report"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "backend-dev-birthday",
+					"item": [
+						{
+							"name": "birthday Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json();\r",
+											"//console.log('fetch',jsonData.payload);\r",
+											"const key = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+											"const iv = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+											"const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+											"const responsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+											"console.log(responsePlainText );"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{devXapiKey}}"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{devCognitoToken}}"
+									},
+									{
+										"key": "SuperAppAuthToken",
+										"value": "{{devSuperAppAuthToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"payload\": \"cPKv3aywI9HbNHjrcCYHV3JuLe28mJwsqLsVdzMjAPjjWGLB8NymNJz4mViOJnFKs5/nYgdJ8A8huZOV+hs50VjwPWAnr50l3Y+QS8fQDDchwc+2rBMI+O6nmOseTU3TayfsqDLNxmItlmWQOa5ujo/npCBze2j6E5Yz6AH3XmZ3QgM203/jVLvHCMH9pgp29Ku7h3sBjIcWstSpwnjk8Q==\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{devBaseUrl}}/birthdays"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "backend-dev-mpower",
+					"item": [
+						{
+							"name": "dev mpower Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json();\r",
+											"//console.log('fetch',jsonData.payload);\r",
+											"const key = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+											"const iv = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+											"const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+											"const responsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+											"console.log(responsePlainText );"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{devXapiKey}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{devCognitoToken}}"
+									},
+									{
+										"key": "SuperAppAuthToken",
+										"value": "{{devSuperAppAuthToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"payload\": \"QBuHl8hElNPNMvIhKK5l8jqPCQ1O2qaT5q2Q9LALX2s1rkngmbOfj8CAiGJ5xc6r6rZ29I1FXN2GdyEALgmlrQxDb2XpZOin9vAm9A22hOaHN/jrtUkOI0pri5IqTUYG8d8efdN5rZkBZsDpHjmAJA==\"\n}"
+								},
+								"url": "{{devBaseUrl}}/briefcase"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "backend-dev-recovery-collection",
+					"item": [
+						{
+							"name": "dev persistency url Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json();\r",
+											"//console.log('fetch',jsonData.payload);\r",
+											"const key = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+											"const iv = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+											"const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+											"const responsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+											"console.log(responsePlainText );"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{devXapiKey}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "SuperAppAuthToken",
+										"value": "{{devSuperAppAuthToken}}"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{devCognitoToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"request\": {\n    \"agentId\": [\"559916\"],\n    \"month\": \"\",\n    \"year\": \"2022\"\n  }\n}"
+								},
+								"url": "{{devBaseUrl}}/recovery"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "backend-dev-Ely-chatbot",
+					"item": [
+						{
+							"name": "Ely Dev Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json();\r",
+											"//console.log('fetch',jsonData.payload);\r",
+											"const key = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+											"const iv = CryptoJS.enc.Latin1.parse('1234567812345678');\r",
+											"const decrypted = CryptoJS.AES.decrypt(jsonData.payload.trim(), key, { iv: iv, padding: CryptoJS.pad.ZeroPadding });\r",
+											"const responsePlainText = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8).replace(/[^\\x20-\\x7E]+$/, \"\")) ;\r",
+											"console.log(responsePlainText );"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "zGVsUXS2gERSXttUpHRD2d3cejLI6YE7cf7ZKXdd"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJraWQiOiJHdlBORnZiR2VTWEpPTFBBY21BUzY3Y25xZ2RKRUQ2YkpJaEVQNE5BOEI0PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxbjEzMGR1Zm1uN2FrZDgyaGZzcnQyaGx0ayIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYWRtaW5cL3dyaXRlIGFkbWluXC9yZWFkIiwiYXV0aF90aW1lIjoxNzA1Mzk1MzU1LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGgtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aC0xX2dZTTVPN005MiIsImV4cCI6MTcwNTM5ODk1NSwiaWF0IjoxNzA1Mzk1MzU1LCJ2ZXJzaW9uIjoyLCJqdGkiOiJhYzdjMTcxZC0zYWU4LTRhNjgtOTJlZi0xZGYzZjhiZTQ4MzUiLCJjbGllbnRfaWQiOiIxbjEzMGR1Zm1uN2FrZDgyaGZzcnQyaGx0ayJ9.WJw0PMChlyWJIF69GPAPB5V_sg2KCdZ2svwuzHzcdg15D42ZGv7_1QHR_Be8zGOydghtQUQvMdKqTb7NHaYX2MxCV6cuhPik7pii2gdv9qsOYphiUeB3cuFFtL6tcBFBVKW6U7-4hPdYgKo83gxAs8spuv8ymBXNw2AuuaFyHYV9HOFifB8OEKsjjTvVHyIRBkZ7LNb3xoRfvzKjclsDoG-k7b42VbCMwWDhjBmMzAIPioYpNzRsrKDE6n-JwjWrYoJzmoKjEzokos6mCHtL441_xqUNOJITZJm2Ax2CcnvtEkfi5U9vxSXAb1Zip8cwhBMv_85iihLF7YhH4b_EMQ",
+										"disabled": true
+									},
+									{
+										"key": "Authorization",
+										"value": "{{devCognitoToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"request\": {\n     \"ssoId\": \"HOM2446\",\n    \"email\": \"Amarjit.Mahadik@maxlifeinsurance.com\"\n  }\n}"
+								},
+								"url": "{{devBaseUrl}}/ely"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
